@@ -16,10 +16,9 @@ buffer.height = VIRTUAL_H;
 const bctx = buffer.getContext("2d");
 
 function resize() {
-  const scale = Math.max(
-    window.innerWidth / VIRTUAL_W,
-    window.innerHeight / VIRTUAL_H
-  );
+  const vw = window.visualViewport ? window.visualViewport.width : window.innerWidth;
+  const vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+  const scale = Math.max(vw / VIRTUAL_W, vh / VIRTUAL_H);
   canvas.width = VIRTUAL_W * scale;
   canvas.height = VIRTUAL_H * scale;
   canvas.style.width = `${VIRTUAL_W * scale}px`;
@@ -27,6 +26,9 @@ function resize() {
 }
 
 window.addEventListener("resize", resize);
+if (window.visualViewport) {
+  window.visualViewport.addEventListener("resize", resize);
+}
 resize();
 
 bindInput(canvas);

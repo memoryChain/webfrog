@@ -31,14 +31,14 @@ body {
 
 #ui {
   position: fixed;
-  top: 16px;
-  left: 16px;
-  right: 16px;
+  top: calc(12px + env(safe-area-inset-top));
+  left: calc(12px + env(safe-area-inset-left));
+  right: calc(12px + env(safe-area-inset-right));
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   pointer-events: none;
-  z-index: 2;
+  z-index: 12;
 }
 
 .brand {
@@ -47,6 +47,7 @@ body {
   border: 1px solid rgba(56, 189, 248, 0.25);
   border-radius: 12px;
   backdrop-filter: blur(6px);
+  max-width: min(64vw, 360px);
 }
 
 .title {
@@ -65,6 +66,8 @@ body {
   background: rgba(15, 23, 42, 0.35);
   border-radius: 999px;
   font-size: 12px;
+  max-width: 42vw;
+  text-align: right;
 }
 
 #game {
@@ -77,4 +80,5 @@ body {
   image-rendering: crisp-edges;
   cursor: crosshair;
   touch-action: none;
+  z-index: 1;
 }

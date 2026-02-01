@@ -1,0 +1,9 @@
+export const VIRTUAL_W = 320;
+export const VIRTUAL_H = 180;
+export const CHARGE_MAX = 1.4;
+export const FORCE_MAX = 4.2;
+export const FORCE_MIN = 1.2;
+export const DRAG = 0.985;
+export const WATER_DRAG = 0.965;
+export const STOP_EPS = 0.02;
+export const CAMERA_SMOOTH = 0.08;

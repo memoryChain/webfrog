@@ -1,0 +1,67 @@
+:root {
+  --bg: #0f172a;
+  --panel: rgba(15, 23, 42, 0.6);
+  --text: #e2e8f0;
+  --accent: #38bdf8;
+  --lime: #7cfc98;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 20%, #1e3a8a, #0f172a 60%);
+  font-family: "Microsoft YaHei UI", "PingFang SC", "Noto Sans SC", sans-serif;
+  color: var(--text);
+  height: 100vh;
+  overflow: hidden;
+}
+
+#ui {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.brand {
+  padding: 12px 16px;
+  background: var(--panel);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+}
+
+.title {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.help {
+  padding: 10px 14px;
+  background: rgba(15, 23, 42, 0.35);
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+#game {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  cursor: crosshair;
+}

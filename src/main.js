@@ -14,12 +14,6 @@ const buffer = document.createElement("canvas");
 buffer.width = VIRTUAL_W;
 buffer.height = VIRTUAL_H;
 const bctx = buffer.getContext("2d");
-let debugEl = document.getElementById("debug");
-if (!debugEl) {
-  debugEl = document.createElement("div");
-  debugEl.id = "debug";
-  document.body.appendChild(debugEl);
-}
 
 function resize() {
   const vw = window.visualViewport ? window.visualViewport.width : window.innerWidth;
@@ -29,7 +23,6 @@ function resize() {
   canvas.height = VIRTUAL_H * scale;
   canvas.style.width = `${VIRTUAL_W * scale}px`;
   canvas.style.height = `${VIRTUAL_H * scale}px`;
-  debugEl.textContent = `vw:${vw.toFixed(0)} vh:${vh.toFixed(0)} | canvas:${canvas.width.toFixed(0)}x${canvas.height.toFixed(0)} | scale:${scale.toFixed(2)}`;
 }
 
 window.addEventListener("resize", resize);

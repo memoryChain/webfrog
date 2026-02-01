@@ -28,18 +28,6 @@ body {
   justify-content: center;
 }
 
-#debug {
-  position: fixed;
-  left: 12px;
-  bottom: 12px;
-  z-index: 10;
-  padding: 6px 8px;
-  border-radius: 8px;
-  background: rgba(15, 23, 42, 0.6);
-  color: #e2e8f0;
-  font: 11px "Microsoft YaHei UI", "PingFang SC", "Noto Sans SC", sans-serif;
-  pointer-events: none;
-}
 
 #ui {
   position: fixed;

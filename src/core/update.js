@@ -58,7 +58,9 @@ export function update(dt) {
   if (state.stage > maxStage) state.stage = maxStage;
   const stageScale = 0.68 + state.stage * 0.09;
   state.frog.sizeScale = stageScale;
-  const targetZoom = Math.max(0.45, 1.0 - state.stage * 0.15);
+  const isPortrait = window.innerHeight > window.innerWidth;
+  const portraitScale = isPortrait ? 0.82 : 1.0;
+  const targetZoom = Math.max(0.45, (1.0 - state.stage * 0.15) * portraitScale);
   state.camera.zoom += (targetZoom - state.camera.zoom) * 0.12;
 
   state.enemySpawnTimer += dt;

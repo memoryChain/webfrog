@@ -22,6 +22,8 @@ function resize() {
   );
   canvas.width = VIRTUAL_W * scale;
   canvas.height = VIRTUAL_H * scale;
+  canvas.style.width = `${VIRTUAL_W * scale}px`;
+  canvas.style.height = `${VIRTUAL_H * scale}px`;
 }
 
 window.addEventListener("resize", resize);

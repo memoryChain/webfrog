@@ -16,7 +16,7 @@ buffer.height = VIRTUAL_H;
 const bctx = buffer.getContext("2d");
 
 function resize() {
-  const scale = Math.min(
+  const scale = Math.max(
     window.innerWidth / VIRTUAL_W,
     window.innerHeight / VIRTUAL_H
   );

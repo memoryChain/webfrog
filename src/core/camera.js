@@ -2,10 +2,9 @@ import { VIRTUAL_W, VIRTUAL_H, CAMERA_SMOOTH } from "./config.js";
 import { state } from "./state.js";
 
 export function worldToScreen(wx, wy) {
-  const zoom = state.camera.zoom || 1;
   return {
-    x: (wx - state.camera.x) * zoom + VIRTUAL_W / 2 + state.camera.shakeX,
-    y: (wy - state.camera.y) * zoom + VIRTUAL_H / 2 + state.camera.shakeY,
+    x: wx - state.camera.x + VIRTUAL_W / 2 + state.camera.shakeX,
+    y: wy - state.camera.y + VIRTUAL_H / 2 + state.camera.shakeY,
   };
 }
 

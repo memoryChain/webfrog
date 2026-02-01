@@ -8,6 +8,11 @@ import { drawPopups } from "../ui/popups.js";
 
 export function drawScene(bctx) {
   bctx.clearRect(0, 0, VIRTUAL_W, VIRTUAL_H);
+  bctx.save();
+  const zoom = state.camera.zoom || 1;
+  bctx.translate(VIRTUAL_W / 2, VIRTUAL_H / 2);
+  bctx.scale(zoom, zoom);
+  bctx.translate(-VIRTUAL_W / 2, -VIRTUAL_H / 2);
   drawWater(bctx);
   drawLilyPads(bctx);
   drawReeds(bctx);
@@ -22,6 +27,7 @@ export function drawScene(bctx) {
   drawTongueBack(bctx);
   drawTongueTip(bctx);
   drawPopups(bctx);
+  bctx.restore();
   drawChargeUI(bctx);
   drawHud(bctx);
   drawHurtFlash(bctx);
